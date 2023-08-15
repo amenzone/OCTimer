@@ -7,23 +7,41 @@
 //
 
 #import "OCViewController.h"
+#import "OCTimer.h"
 
 @interface OCViewController ()
-
+@property (copy, nonatomic) NSString *task;
+//@property (copy, nonatomic) NSString *task2;
 @end
 
 @implementation OCViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // 接口设计
+    self.task = [OCTimer execTask:self
+                         selector:@selector(doTask)
+                            start:2.0
+                         interval:1.0
+                          repeats:YES
+                            async:YES];
+    // 接口设计2 repeats:NO 不需要调用cancelTask
+    /*self.task2 = [OCTimer execTask:^{
+        NSLog(@"执行任务 - %@", [NSThread currentThread]);
+    } start:2.0 interval:1 repeats:NO async:NO];*/
 }
 
-- (void)didReceiveMemoryWarning
+- (void)doTask
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"DoTask - %@", [NSThread currentThread]);
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [OCTimer cancelTask:self.task];
+}
+
 
 @end
+

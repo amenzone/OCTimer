@@ -1,0 +1,16 @@
+PODS:
+  - OCTimer (0.1.0)
+
+DEPENDENCIES:
+  - OCTimer (from `../`)
+
+EXTERNAL SOURCES:
+  OCTimer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OCTimer: b020f64a4eeba959fea4e32e8bd181a4e60db387
+
+PODFILE CHECKSUM: 436a24aba658447b9f27416296e2f32e44fbd3f4
+
+COCOAPODS: 1.12.0

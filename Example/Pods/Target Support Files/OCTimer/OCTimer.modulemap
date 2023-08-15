@@ -1,0 +1,6 @@
+framework module OCTimer {
+  umbrella header "OCTimer-umbrella.h"
+
+  export *
+  module * { export * }
+}
