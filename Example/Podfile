@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'OCTimer_Example' do
+  pod 'OCTimer', :path => '../'
+
+  target 'OCTimer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
